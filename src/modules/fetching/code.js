@@ -1,24 +1,21 @@
 const axios = require('axios');
 
-const postCode = async (req, res) => {
-  const code = req.body.code;
-
-  res = await fetch('/api/code', {
-    method: 'POST',
-    body: JSON.stringify({
-      code: code
-    }),
-  });
-  console.log(res.json())
-};
+const postCode = async (code) => {
+  try {
+    const response = await axios.post('/api/code', {code: code});
+    return response.data
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 const getUser = async () => {
   try {
     const response = await axios.get('/api/code');
-    const users = response.data;
-    console.log(users);
+
+    return response.data
   } catch (error) {
-    // console.error(error);
+    console.error(error);
   }
 };
 

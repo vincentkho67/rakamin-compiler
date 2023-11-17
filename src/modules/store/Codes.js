@@ -10,7 +10,7 @@ export const useCodeStore = create((set) => ({
 }))
 
 export const useUserStore = create((set) => ({
-  user: null,
+  user: 'Joni',
   setUser: (newUser) => {
     set(() => {
       return {user: newUser}

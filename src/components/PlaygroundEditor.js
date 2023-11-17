@@ -24,14 +24,15 @@ const PlaygroundEditor = () => {
 
   const handleUpdateCode = async () => {
     const updatedCode = await postCode(getEditorValue());
-    // console.log(updatedCode, '<<<<<<<<<<<<<<<< UPDATED')
-    setCode(updatedCode);
+    console.log(updatedCode.data)
+    setCode(updatedCode.data);
     setIsLoading(false);
   };
 
   const handleGet = async () => {
     const res = await getUser();
-    setCode(res);
+    console.log(res)
+    setUser(res);
   }
     
 
@@ -45,8 +46,12 @@ const PlaygroundEditor = () => {
         theme="vs-dark"
         onMount={handleEditorDidMount}
       />
-      <Button onClick={handleUpdateCode} > test </Button>
-      <Button onClick={handleGet} > {code} </Button>
+      <Button onClick={handleUpdateCode}>
+        {code && code.length > 0 && code.map((li) => (
+          <span key={li}>{li}</span>
+        ))}
+      </Button>
+      <Button onClick={handleGet} >{user}</Button>
     </>
   );
 };
