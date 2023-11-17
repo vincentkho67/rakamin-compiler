@@ -1,7 +1,7 @@
 import {create} from 'zustand'
 
 export const useCodeStore = create((set) => ({
-  code: 'console.log("Hello World")',
+  code: 'console.log("Hello")',
   setCode: (newCode) => {
     set((state) => {
       return {code: newCode}
