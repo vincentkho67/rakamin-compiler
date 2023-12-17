@@ -29,3 +29,11 @@ export async function POST(req) {
     headers: { 'Content-Type': 'application/json' },
   });
 }
+
+export async function GET(req) {
+  const { id } = req.params;
+  const assignment = await Assignment.findByPk(id);
+  return new Response(JSON.stringify(assignment), {
+    headers: { 'Content-Type': 'application/json' },
+  });
+}

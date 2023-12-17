@@ -9,13 +9,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      user_assignment_id: {
-        type: Sequelize.INTEGER
-      },
       description: {
         type: Sequelize.STRING
       },
       context: {
+        type: Sequelize.STRING
+      },
+      display_code: {
         type: Sequelize.STRING
       },
       createdAt: {

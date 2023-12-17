@@ -18,6 +18,9 @@ module.exports = {
       score: {
         type: Sequelize.FLOAT
       },
+      display: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

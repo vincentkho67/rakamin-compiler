@@ -22,6 +22,7 @@ module.exports = {
     await queryInterface.bulkInsert('Assignments', [{
       description: 'Assignment 1',
       context: 'const a = 1;',
+      display_code: 'function sum(a,b) { //write your solution here}',
       createdAt: new Date(),
       updatedAt: new Date()
     }])
